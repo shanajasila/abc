@@ -6,6 +6,30 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CareesComponent } from './carees/carees.component';
+import { AdminComponent } from './admin/admin.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const myRoute:Routes=[
+  {
+    path:"",
+    component:HomeComponent
+  },
+  {
+    path:"about",
+    component:AboutComponent
+  },
+  {
+    path:"career",
+    component:CareesComponent
+  },
+ 
+  {
+    path:"admin",
+    component:AdminComponent
+  },
+  
+]
 
 @NgModule({
   declarations: [
@@ -13,10 +37,13 @@ import { CareesComponent } from './carees/carees.component';
     HomeComponent,
     AboutComponent,
     CareesComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
